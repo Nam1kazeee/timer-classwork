@@ -1,5 +1,105 @@
-*{
+* {
     margin: 0;
-    padding: 0; 
+    padding: 0;
     box-sizing: border-box;
+}
+
+.clock {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    position: relative;
+    border: 5px solid blue;
+}
+
+.arrow_vertical {
+    width: 3px;
+    height: 10px;
+    background-color: black;
+    position: absolute;
+
+}
+
+.arrow_60 {
+    left: 50%;
+    top: 0px;
+}
+
+.arrow_30 {
+    left: 50%;
+    bottom: 0px;
+}
+
+.arrow_horizontal {
+    width: 10px;
+    height: 3px;
+    background-color: black;
+    position: absolute;
+}
+
+.arrow_15 {
+    top: 50%;
+    right: 0px;
+}
+
+.arrow_45 {
+    top: 50%;
+    left: 0px;
+}
+
+.arrow_45::after {
+    content: "45";
+    position: absolute;
+    left: 12px;
+    top: -15px;
+    font-size: 26px;
+}
+
+.arrow_60::after {
+    content: "60";
+    position: absolute;
+    left: -10px;
+    top: 10px;
+    font-size: 26px;
+}
+
+.arrow_30::after {
+    content: "30";
+    position: absolute;
+    left: -10px;
+    bottom: 7px;
+    font-size: 26px;
+}
+
+.arrow_15::after {
+    content: "15";
+    position: absolute;
+    right: 10px;
+    bottom: -15px;
+    font-size: 26px;
+}
+
+.main_arrow {
+    position: absolute;
+    width: 3px;
+    height: 50%;
+    background-color: red;
+    left: 50%;
+    bottom: 47%;
+    transform-origin: center 95%;
+    rotate: 90deg;
+    animation-name: timer;
+    animation-duration: 6s;
+    animation-timing-function:linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes timer {
+    from {
+        transform: rotate(0deg)
+    }
+
+    to {
+        transform: rotate(360deg)
+    }
 }
